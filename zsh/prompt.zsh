@@ -1,6 +1,9 @@
 autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
+# and reddit
+# https://www.reddit.com/r/commandline/comments/1do8cb/asdf/c9skhfo/
+
 
 if (( $+commands[git] ))
 then
@@ -54,11 +57,11 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-battery_status() {
-  $ZSH/bin/battery-status
+user_host() {
+  echo "%{$fg[green]%}%n@%m%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(battery_status)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(user_host) in $(directory_name) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
