@@ -1,10 +1,14 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
-[hub]
-        protocol = https
 [alias]
+        st = status
+        ci = commit
+        br = branch
         co = checkout
+        df = diff
+        lg = log -p
+        heropush = push heroku master
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
         rank-contributors = !$ZSH/bin/git-rank-contributors
@@ -15,8 +19,9 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+        [core]
         editor = vim
+	excludesfile = /Users/pink/.gitignore
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -31,3 +36,9 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

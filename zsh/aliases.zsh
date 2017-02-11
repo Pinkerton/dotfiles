@@ -1,3 +1,3 @@
 alias reload!='. ~/.zshrc'
 
-alias cls='clear' # Good 'ol Clear Screen command
+alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
