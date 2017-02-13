@@ -13,7 +13,6 @@ call vundle#begin()
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
-  source ~/.vimrc.bundles.local
 endif
 
 call vundle#end()
@@ -69,6 +68,7 @@ nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 nnoremap <leader>g :GitGutterToggle<CR>
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+"nnoremap <leader> :buffers<CR>:buffer<Space>
 
 " in case you forgot to sudo
 cnoremap w!! %!sudo tee > /dev/null %
@@ -107,8 +107,18 @@ endif
 " Don't copy the contents of an overwritten selection.
 vnoremap p "_dP
 
+" highlight search
+set hlsearch
+nmap <leader>hl :let @/ = ""<CR>
+
+" set colorscheme
+colorscheme fairyfloss
+set termguicolors
+
+" open NERDTree pane if vim was launched with no arguments
+autocmd VimEnter * if !argc() | NERDTree | endif
+
 " set autowrite
-" set nocursorline
 " set nowritebackup
 " set whichwrap+=<,>,h,l,[,] " Wrap arrow keys between lines
 "

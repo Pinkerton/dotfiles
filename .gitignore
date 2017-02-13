@@ -9,4 +9,5 @@ atom.symlink/themes
 atom.symlink/blob-store
 atom.symlink/recovery
 
+tags
 git/gitconfig.local.symlink
