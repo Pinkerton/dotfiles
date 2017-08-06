@@ -29,7 +29,10 @@ set -g pane-active-border-bg cyan
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
 # Enable color
-set-option -g default-terminal screen-256color
+# $TERM=xterm-256color, so why is this screen-256color? Explanations:
+# http://unix.stackexchange.com/q/1045
+# https://raw.githubusercontent.com/tmux/tmux/master/FAQ
+set-option -g default-terminal "screen-256color"
 
 # Enable vi keybindings for dealing with buffers
 setw -g mode-keys vi

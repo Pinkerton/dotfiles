@@ -62,7 +62,7 @@ nnoremap <leader>a :Ag<space>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>p :CtrlP<CR>
 nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
@@ -114,6 +114,11 @@ nmap <leader>hl :let @/ = ""<CR>
 " set colorscheme
 colorscheme fairyfloss
 set termguicolors
+
+" solarized light
+"syntax enable
+"set background=light
+"colorscheme solarized
 
 " open NERDTree pane if vim was launched with no arguments
 autocmd VimEnter * if !argc() | NERDTree | endif
